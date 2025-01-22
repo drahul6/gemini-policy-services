@@ -496,7 +496,8 @@
             // Chart configuration with improvements
             Highcharts.chart("chart-container", {
                 chart: {
-                    type: "column",
+                    type: "bar", // Change chart type to "bar"
+                    zoomType: "xy",
                 },
                 title: {
                     text: "Policies details",
@@ -509,7 +510,7 @@
                         description: "Product wise policy details",
                     },
                     labels: {
-                        rotation: -45,
+                        rotation: -10,
                         style: {
                             fontSize: "12px",
                         },
@@ -525,7 +526,7 @@
                     valuePrefix: "₹ ",
                 },
                 plotOptions: {
-                    column: {
+                    bar: { // Update this to "bar"
                         pointPadding: 0.2,
                         borderWidth: 0,
                     },
@@ -535,10 +536,8 @@
                     align: "right",
                     verticalAlign: "middle",
                 },
-                chart: {
-                    zoomType: "xy",
-                },
-                series: [{
+                series: [
+                    {
                         name: "Premium",
                         data: data.price,
                     },
@@ -548,6 +547,7 @@
                     },
                 ],
             });
+
         }
 
         function pieChart(chartData) {
