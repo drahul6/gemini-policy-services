@@ -263,26 +263,20 @@
                         moment().subtract(1, "month").endOf("month"),
                     ],
                     "Financial Year": [
-                        moment()
-                        .subtract(1, "years")
-                        .startOf("year")
-                        .add(3, "months"),
-                        moment()
-                        .subtract(1, "years")
-                        .endOf("year")
-                        .add(3, "months")
-                        .endOf("month"),
+                        moment().month() < 3 
+                            ? moment().subtract(1, 'year').startOf('year').add(3, 'months')
+                            : moment().startOf('year').add(3, 'months'),  
+                        moment().month() < 3 
+                            ? moment().subtract(1, 'year').endOf('year').add(3, 'months')   
+                            : moment().endOf('year').add(3, 'months')
                     ],
                     "Last Financial Year": [
-                        moment()
-                        .subtract(2, "years")
-                        .startOf("year")
-                        .add(3, "months"),
-                        moment()
-                        .subtract(2, "years")
-                        .endOf("year")
-                        .add(3, "months")
-                        .endOf("month"),
+                        moment().month() < 3 
+                            ? moment().subtract(2, 'year').startOf('year').add(3, 'months') 
+                            : moment().subtract(1, 'year').startOf('year').add(3, 'months'),
+                        moment().month() < 3 
+                            ? moment().subtract(2, 'year').endOf('year').add(3, 'months')
+                            : moment().subtract(1, 'year').endOf('year').add(3, 'months')
                     ],
                 },
                 startDate: moment()

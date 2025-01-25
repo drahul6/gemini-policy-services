@@ -96,7 +96,7 @@
                                 </select>
                                 @if(Auth::user()->hasRole('Staff') || Auth::user()->hasRole('Admin'))
 
-                                <p class="mg-b-10">Broker/Staff</p>
+                                <p class="mg-b-10">Agent/Staff</p>
                                 <select name="users" class="form-control">
                                     <option value="">Select</option>
                                     @if(isset($users) && $users->count())
