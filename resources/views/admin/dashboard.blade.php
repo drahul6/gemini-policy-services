@@ -262,7 +262,7 @@
                         moment().subtract(1, "month").startOf("month"),
                         moment().subtract(1, "month").endOf("month"),
                     ],
-                    "Financial Year": [
+                    "Current Financial Year": [
                         moment().month() < 3 
                             ? moment().subtract(1, 'year').startOf('year').add(3, 'months')
                             : moment().startOf('year').add(3, 'months'),  
